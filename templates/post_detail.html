@@ -1,0 +1,163 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div id="main-content" class="site-main-content">
+            <section class="site-content-area">
+
+                <div class="uni-banner-default uni-background-1">
+                    <div class="container">
+                        <!-- Page title -->
+                        <div class="page-title">
+                            <div class="page-title-inner">
+                                <h1>Детальный пост</h1>
+                            </div>
+                        </div>
+                        <!-- End page title -->
+                        <!-- Breadcrumbs -->
+                        <ul class="breadcrumbs">
+                            <li><a href="{% url 'index' %}">Главная</a></li>
+                            <li><a href="{% url 'post_list' %}">Блог</a></li>
+                            <li><a href="{% url 'post_detail' post.id %}">Детальный пост</a></li>
+                        </ul>
+                        <!-- End breadcrumbs -->
+                    </div>
+                </div>
+                <div class="uni-single-post-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="uni-single-post-left">
+                                    <div class="page-content">
+                                        <article class="post-92 post type-post has-post-thumbnail">
+                                            <div class="content-inner">
+                                                <div class="uni-entry-top">
+                                                    <div class="post-formats-wrapper">
+                                                        <a class="post-image" href="#">
+                                                            <img src="{{object.image.url}}" class="attachment-full size-full wp-post-image img-responsive" alt="">
+                                                        </a>
+                                                    </div>
+                                                </div><!-- .entry-top -->
+                                                <div class="uni-entry-body">
+                                                    <div class="uni-entry-time">
+                                                        <ul>
+                                                            <li class="year">{{object.created.year}}</li>
+                                                            <li class="day">{{object.created.day}}</li>
+                                                            <li class="month">{{object.created.month}} месяц</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="uni-entry-content">
+                                                        <header class="uni-entry-header">
+                                                            <h2 class="uni-entry-title">
+                                                                {{object.title}}
+                                                            </h2>
+                                                        </header>
+                                                        <div class="uni-entry-meta">
+                                                        <span class="uni-author">
+                                                            <a href="#" rel="author"><i class="fa fa-calendar" aria-hidden="true"></i> {{object.created}}</a>
+                                                        </span>
+                                                            <span class="uni-comment-total">
+                                                            <a href="#" class="comments-link"><i class="fa fa-user" aria-hidden="true"></i> {{object.author.username}}</a>
+                                                        </span>
+                                                        </div>
+                                                        <div class="uni-entry-description">
+                                                            <p>
+                                                                {{object.description|safe}}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="uni-divider"></div>
+
+<!--                                                <div class="uni-entry-tag-share">-->
+<!--                                                    <div class="share-click">-->
+<!--                                                        <ul class="thim-social-share">-->
+<!--                                                            <li>Поделиться:</li>-->
+<!--                                                            <li class="facebook"><a href="https://m.facebook.com/login/?locale2=ru_RU"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>-->
+<!--                                                            <li class="twitter"><a href="https://twitter.com/?lang=ru"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>-->
+<!--                                                            <li class="google-plus"><a href="https://www.google.ru/"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>-->
+<!--                                                            <li class="youtube"><a href="https://www.youtube.com/"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>-->
+<!--                                                        </ul>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+                                            </div>
+                                        </article>
+<!--                                        <div class="uni-author">-->
+<!--                                            <div class="uni-author-info">-->
+<!--                                                <div class="item-img">-->
+<!--                                                    <img src="{% static 'images/single_post/img42.jpg' %}" alt="" class="img-responsive">-->
+<!--                                                </div>-->
+<!--                                                <div class="item-content">-->
+<!--                                                    <span class="author-name">{{object.author.username}}</span>-->
+<!--                                                    <p>{{object.title}}</p>-->
+<!--                                                    <a href="https://www.instagram.com/dosmed.kg/?igshid=YmMyMTA2M2Y%3D">http://instagram.com</a>-->
+<!--                                                    <ul>-->
+<!--                                                        <li><a href="https://m.facebook.com/login/?locale2=ru_RU"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>-->
+<!--                                                        <li><a href="https://twitter.com/?lang=ru"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>-->
+<!--                                                        <li><a href="https://www.google.ru/"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>-->
+<!--                                                        <li><a href="https://www.youtube.com/"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>-->
+<!--                                                    </ul>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-md-4">
+                                <div class="uni-blog-list-right">
+                                    <aside id="secondary" class="widget-area">
+                                        <aside class="widget">
+                                            <div class="widget-content">
+                                                <div class="uni-search-sidebar">
+                                                    <form action="http://medicare.vikitheme.com/html/action.php" method="post" accept-charset="utf-8">
+                                                        <div class="vk-newlist-banner-test-search">
+                                                            <input type="text" name="seach" placeholder="Поиск..">
+                                                            <button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                        <aside class="widget">
+                                            <h3 class="widget-title">Категории</h3>
+                                            <div class="uni-divider"></div>
+                                            <div class="widget-content">
+                                                <div class="uni-widget-category">
+                                                    <ul>{% for category in categories %}
+                                                        <li><a href="{% url 'post_category_list' category.slug %}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                            {{category.name}}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                        <aside class="widget">
+                                            <h3 class="widget-title">Последние посты</h3>
+                                            <div class="uni-divider"></div>
+                                            <div class="widget-content">
+                                                <div class="uni-widget-popular-posts">
+                                                    <ul>
+                                                        <li>{% for lp in latest_posts %}
+                                                            <div class="item-widget-popular-post">
+                                                                <div class="item-img">
+                                                                    <a href="{% url 'post_detail' post.id %}"><img src="{{lp.image.url}}" alt=""></a>
+                                                                </div>
+                                                                <div class="item-caption">
+                                                                    <h4><a href="{% url 'post_detail' post.id %}">{{lp.title}}</a></h4>
+                                                                    <div class="time"><i class="fa fa-calendar" aria-hidden="true"></i>{{lp.created}}</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>{% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+{% endblock %}

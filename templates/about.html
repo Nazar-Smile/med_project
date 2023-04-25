@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+        <div id="main-content" class="site-main-content">
+            <section class="site-content-area">
+
+                <div class="uni-banner-default uni-background-1">
+                    <div class="container">
+                        <!-- Page title -->
+                        <div class="page-title">
+                            <div class="page-title-inner">
+                                <h1>О нас</h1>
+                            </div>
+                        </div>
+                        <!-- End page title -->
+
+                        <!-- Breadcrumbs -->
+                        <ul class="breadcrumbs">
+                            <li><a href="{% url 'index' %}">Главная</a></li>
+                            <li><a href="{% url 'about' %}">О нас</a></li>
+                        </ul>
+                        <!-- End breadcrumbs -->
+                    </div>
+                </div>
+
+                <div class="uni-about-body">
+
+                    <!--WHO WE ARE-->
+                    <div class="uni-about-who-are-you">
+                        <div class="container">
+                            <div class="uni-services-title">
+                                <h3>О нас</h3>
+                                <div class="uni-underline"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="uni-about-who-are-you-left">
+                                        <img src="images/about/img.jpg" alt="" class="img-responsive">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="uni-about-who-are-you-right">
+                                        <p>
+                                        </p>
+                                        <h4>Наши миссии</h4>
+                                        <ul>
+                                            <li>Оказание медицинской помощи в экстренных ситуациях: Целью частной
+                                                скорой помощи является предоставление квалифицированной медицинской
+                                                помощи в экстренных ситуациях, таких как сердечный приступ, инсульт,
+                                                травмы и другие неотложные состояния.</li>
+                                            <li>Транспортировка больных и пострадавших: В случае необходимости больной
+                                                или пострадавший должен быть перевезен в медицинское учреждение для
+                                                дальнейшего лечения. Частная скорая помощь занимается транспортировкой
+                                                пациентов в больницы и другие медицинские учреждения.</li>
+                                            <li>Оказание медицинской помощи на мероприятиях: Частная скорая
+                                                помощь может также предоставлять медицинскую помощь на мероприятиях,
+                                                таких как спортивные соревнования, концерты и другие массовые мероприятия.</li>
+                                            <li>Консультации и советы: Частная скорая помощь также может оказывать
+                                                консультации и советы по вопросам здоровья и медицинским проблемам,
+                                                в том числе по вопросам предупреждения болезней, лечения и реабилитации.</li>
+                                            <li>Обучение и тренинги: Частная скорая помощь может проводить обучение и
+                                                тренинги для персонала медицинских учреждений и общественности по вопросам
+                                                первой помощи, транспортировки и других медицинских вопросов.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+{% endblock %}

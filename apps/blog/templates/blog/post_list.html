@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="uni-blog-list">
+    <div id="wrapper-container" class="site-wrapper-container">
+
+        <div id="main-content" class="site-main-content">
+            <section class="site-content-area">
+
+                <div class="uni-banner-default uni-background-1">
+                    <div class="container">
+                        <!-- Page title -->
+                        <div class="page-title">
+                            <div class="page-title-inner">
+                                <h1>Блог</h1>
+                            </div>
+                        </div>
+                        <!-- End page title -->
+
+                        <!-- Breadcrumbs -->
+                        <ul class="breadcrumbs">
+                            <li><a href="{% url 'index' %}">Главная</a></li>
+                            <li><a href="{% url 'post_list' %}">Блог</a></li>
+                        </ul>
+                        <!-- End breadcrumbs -->
+                    </div>
+                </div>
+
+                <div class="uni-blog-list-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="uni-blog-list-left">
+                                    <!--===========================================-->
+                                    {% for post in object_list %}
+                                    <div class="blog-list-item">
+                                        <article class="post type-post">
+                                            <div class="content-inner">
+                                                <div class="uni-entry-top">
+                                                    <div class="thumbnail-img">
+                                                        <a href="{% url 'post_detail' post.id %}" title="">
+                                                            <img src="{{ post.image.url }}" alt="" title="" class="img-responsive">
+                                                        </a>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="uni-entry-body" style="margin-left:-6.5rem;">
+                                                    <div class="uni-entry-content">
+
+                                                        <header class="uni-entry-header">
+                                                            <h2 class="uni-entry-title">
+                                                                <a href="{% url 'post_detail' post.id %}" rel="">{{ post.title }}</a>
+                                                            </h2>
+                                                        </header>
+
+                                                        <div class="uni-entry-meta">
+                                                        <span class="uni-author">
+                                                            <a href="{% url 'post_detail' post.id %}" rel="author"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.created}}</a>
+                                                        </span>
+                                                            <span class="uni-comment-total">
+                                                            <a href="#" class="comments-link"><i class="fa fa-user" aria-hidden="true"></i> {{ post.author.username }}</a>
+                                                        </span>
+                                                        </div>
+                                                        <div class="uni-entry-summary">
+                                                            <p>{{ post.description|safe }}</p>
+                                                        </div>
+                                                        <div class="readmore">
+                                                            <a href="{% url 'post_detail' post.id %}"><i class="icomoon icon-up"></i>Читать больше</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </article>
+                                    </div>
+                                     {% endfor %}
+                                    <!--===========================================-->
+                                    <!--Pagination blog-->
+                    <span class="step-links">
+                    {% if page_obj.has_previous %}
+                        <a style="color:#FF43A4;" href="?page=1">&lArr; Первая</a>
+                        <a style="color:#FF43A4; margin-left:1rem;" href="?page={{ page_obj.previous_page_number }}">&lsaquo; Предыдущая</a>
+                    {% endif %}
+                    <span class="current">
+                        <a style="color:#3f97da; margin-left:1rem;"> Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.</a>
+                    </span>
+                    {% if page_obj.has_next %}
+                        <a style="color:#FF43A4; margin-left:1rem;" href="?page={{ page_obj.next_page_number }}">Следующая &rsaquo;</a>
+                        <a style="color:#FF43A4; margin-left:1rem;" href="?page={{ page_obj.paginator.num_pages }}">Последняя &rArr;</a>
+                    {% endif %}
+                </span>
+        </div>  </div>
+                                    </div>
+                                    <!--Pagination blog-->
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="uni-blog-list-right">
+                                    <aside id="secondary" class="widget-area">
+                                        <aside class="widget">
+                                            <div class="widget-content">
+                                                <div class="uni-search-sidebar">
+                                                    <form action="http://medicare.vikitheme.com/html/action.php" method="post" accept-charset="utf-8">
+                                                        <div class="vk-newlist-banner-test-search">
+                                                            <input type="text" name="seach" placeholder="Search...">
+                                                            <button type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                        <aside class="widget">
+                                            <h3 class="widget-title">Категории</h3>
+                                            <div class="uni-divider"></div>
+                                            <div class="widget-content">
+                                                <div class="uni-widget-category">
+                                                    <ul>{% for category in categories %}
+                                                        <li><a href="{% url 'post_category_list' category.slug %}"><i class="fa fa-angle-right" aria-hidden="true"></i>
+                                                            {{category.name}}</a></li>
+                                                        {% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </aside>
+                                        <aside class="widget">
+                                            <h3 class="widget-title">Недавние посты</h3>
+                                            <div class="uni-divider"></div>
+                                            <div class="widget-content">
+                                                <div class="uni-widget-popular-posts">
+                                                    <ul>
+                                                        <li>{% for lp in latest_posts %}
+                                                            <div class="item-widget-popular-post">
+                                                                <div class="item-img">
+                                                                    <a href="#"><img src="{{lp.image.url}}" alt=""></a>
+                                                                </div>
+                                                                <div class="item-caption">
+                                                                    <h4><a href="#">{{lp.title}}</a></h4>
+                                                                    <div class="time"><i class="fa fa-calendar" aria-hidden="true"></i>{{lp.created}}</div>
+                                                                </div>
+                                                            </div>
+                                                        </li>{% endfor %}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </aside>
+
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+{% endblock %}
