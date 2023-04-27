@@ -2,11 +2,50 @@
 {% load static %}
 <html lang="en">
 <head>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFZZ9SW946"></script>
+    <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LFZZ9SW946');
+
+
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>DOSMED.KG</title>
-    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}" />
+
+    <meta name="description"
+          content="Оказываем экстренную медицинскую помощь на дому и в стационаре в Бишкеке. Вызовите нашу скорую помощь по телефону 0501103000.">
+    <meta name="keywords"
+          content="скорая помощь, экстренная медицина, вызов врача на дом, медицинская помощь на дому, Бишкек, Чуй, Бирдик, Аламудун, Панфилов, Жалал-Абад, Чуй-Токмок, Каинды, медицинский центр, стационар, скорая помощь на дому, неотложная помощь, сердечно-сосудистые заболевания, травмы, головные боли, инфекции, операции, ургентная медицина, остановка сердца, инфаркт, инсульт, детская скорая помощь, dosmed, досмед, дозмед">
+
+    <!--Facebook open graph start -->
+    <meta property="og:title" content="Dosmed"/>
+    <meta property="og:description" content="Dosmed"/>
+    <meta property="og:url" content="http://www.dosmed.org"/>
+    <meta property="og:image" content="http://www.yoursite.com/yourimage.jpg"/>
+    <meta property="og:site_name" content="Dosmed"/>
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:type" content="article"/>
+    <!--Facebook open graph start -->
+
+    <!--Twitter start -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:title" content="Title Of Your Content Here"/>
+    <meta name="twitter:description" content="Description of your content here"/>
+    <meta name="twitter:site" content="@yourusername"/>
+    <meta name="twitter:image" content="http://www.yoursite.com/yourimage.jpg"/>
+    <meta name="twitter:creator" content="@yourusername"/>
+    <!--Twitter end -->
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'images/favicon.png' %}"/>
     <link rel="stylesheet" href="{% static 'plugin/bootstrap/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'plugin/bootstrap/css/bootstrap-theme.css' %}">
     <link rel="stylesheet" href="{% static 'fonts/poppins/poppins.css' %}">
@@ -47,8 +86,8 @@
             <li class="has-sub"><a href="{% url 'index' %}">Главная</a>
             </li>
             <li class="has-sub"><a href="{% url 'post_list' %}">Блог</a>
-         <li class="has-sub"><a href="{% url 'about' %}">О нас</a>
-        <div class="clearfix"></div>
+            <li class="has-sub"><a href="{% url 'about' %}">О нас</a>
+                <div class="clearfix"></div>
     </div>
 </nav>
 <!-- End mobile menu -->
@@ -62,7 +101,8 @@
                             <div class="col-md-2">
                                 <!--LOGO-->
                                 <div class="wrapper-logo">
-                                    <a class="logo-default" href="#"><img src="{% static 'images/DOCMED.KG_Logo.png' %}" alt="" class="img-responsive"></a>
+                                    <a class="logo-default" href="#"><img src="{% static 'images/DOCMED.KG_Logo.png' %}"
+                                                                          alt="" class="img-responsive"></a>
                                     <div class="clearfix"></div>
                                 </div>
                             </div>
@@ -75,7 +115,7 @@
                                                 <li><a href="{% url 'index' %}">Главная</a>
                                                 </li>
                                                 <li><a href="{% url 'post_list' %}">Блог</a>
-                                               <li><a href="{% url 'about' %}">О нас</a>
+                                                <li><a href="{% url 'about' %}">О нас</a>
 
                                             </ul>
                                         </div>
@@ -105,34 +145,57 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <ul>
-                                            <li><a href="07_01_buttons.html"><i class="fa fa-plus-square" aria-hidden="true"></i>Buttons</a></li>
-                                            <li><a href="07_02_icons_box.html"><i class="fa fa-cube" aria-hidden="true"></i>Icon Box</a></li>
-                                            <li><a href="07_03_progress.html"><i class="fa fa-tasks" aria-hidden="true"></i>Process Bar</a></li>
-                                            <li><a href="07_04_tabs.html"><i class="fa fa-columns" aria-hidden="true"></i>Tabs</a></li>
+                                            <li><a href="07_01_buttons.html"><i class="fa fa-plus-square"
+                                                                                aria-hidden="true"></i>Buttons</a></li>
+                                            <li><a href="07_02_icons_box.html"><i class="fa fa-cube"
+                                                                                  aria-hidden="true"></i>Icon Box</a>
+                                            </li>
+                                            <li><a href="07_03_progress.html"><i class="fa fa-tasks"
+                                                                                 aria-hidden="true"></i>Process Bar</a>
+                                            </li>
+                                            <li><a href="07_04_tabs.html"><i class="fa fa-columns"
+                                                                             aria-hidden="true"></i>Tabs</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-3">
                                         <ul>
-                                            <li><a href="07_05_accordion.html"><i class="fa fa-list" aria-hidden="true"></i>Accordion</a></li>
-                                            <li><a href="07_06_counter.html"><i class="fa fa-tachometer" aria-hidden="true"></i>Counter</a></li>
-                                            <li><a href="07_07_testimonials.html"><i class="fa fa-comments-o" aria-hidden="true"></i>Testimonials</a></li>
-                                            <li><a href="07_08_typography.html"><i class="fa fa-text-width" aria-hidden="true"></i>Typography</a></li>
+                                            <li><a href="07_05_accordion.html"><i class="fa fa-list"
+                                                                                  aria-hidden="true"></i>Accordion</a>
+                                            </li>
+                                            <li><a href="07_06_counter.html"><i class="fa fa-tachometer"
+                                                                                aria-hidden="true"></i>Counter</a></li>
+                                            <li><a href="07_07_testimonials.html"><i class="fa fa-comments-o"
+                                                                                     aria-hidden="true"></i>Testimonials</a>
+                                            </li>
+                                            <li><a href="07_08_typography.html"><i class="fa fa-text-width"
+                                                                                   aria-hidden="true"></i>Typography</a>
+                                            </li>
                                         </ul>
                                     </div>
                                     <div class="col-md-3">
                                         <ul>
-                                            <li><a href="07_09_partner.html"><i class="fa fa-handshake-o" aria-hidden="true"></i> Partner</a></li>
-                                            <li><a href="07_10_team.html"><i class="fa fa-users" aria-hidden="true"></i> Team</a></li>
-                                            <li><a href="07_11_item_list.html"><i class="fa fa-list-ol" aria-hidden="true"></i> Item List</a></li>
-                                            <li><a href="07_12_divider.html"><i class="fa fa-chain-broken" aria-hidden="true"></i>Dividers</a></li>
+                                            <li><a href="07_09_partner.html"><i class="fa fa-handshake-o"
+                                                                                aria-hidden="true"></i> Partner</a></li>
+                                            <li><a href="07_10_team.html"><i class="fa fa-users" aria-hidden="true"></i>
+                                                Team</a></li>
+                                            <li><a href="07_11_item_list.html"><i class="fa fa-list-ol"
+                                                                                  aria-hidden="true"></i> Item List</a>
+                                            </li>
+                                            <li><a href="07_12_divider.html"><i class="fa fa-chain-broken"
+                                                                                aria-hidden="true"></i>Dividers</a></li>
                                         </ul>
                                     </div>
                                     <div class="col-md-3">
                                         <ul>
-                                            <li><a href="07_13_columns.html"><i class="fa fa-bar-chart" aria-hidden="true"></i> Columns</a></li>
-                                            <li><a href="07_14_pricing_table.html"><i class="fa fa-address-card-o" aria-hidden="true"></i> Pricing table</a></li>
-                                            <li><a href="#"><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 404 Pages</a></li>
-                                            <li><a href="#"><i class="fa fa-repeat" aria-hidden="true"></i> Comming soon</a></li>
+                                            <li><a href="07_13_columns.html"><i class="fa fa-bar-chart"
+                                                                                aria-hidden="true"></i> Columns</a></li>
+                                            <li><a href="07_14_pricing_table.html"><i class="fa fa-address-card-o"
+                                                                                      aria-hidden="true"></i> Pricing
+                                                table</a></li>
+                                            <li><a href="#"><i class="fa fa-exclamation-triangle"
+                                                               aria-hidden="true"></i> 404 Pages</a></li>
+                                            <li><a href="#"><i class="fa fa-repeat" aria-hidden="true"></i> Comming soon</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -152,18 +215,27 @@
                         <div class="footer-main-content-elements">
                             <div class="footer-main-content-element col-md-3 col-sm-6">
                                 <aside class="widget">
-                                    <div class="widget-title uni-uppercase"><a href="#"><img src="{% static 'images/DOCMED.KG_Logo.png' %}" alt="" class="img-responsive"></a></div>
+                                    <div class="widget-title uni-uppercase"><a href="#"><img
+                                            src="{% static 'images/DOCMED.KG_Logo.png' %}" alt=""
+                                            class="img-responsive"></a></div>
                                     <div class="widget-content">
                                         <p>
                                             Бывает, что мы не обязательно (по ситуации) выезжаем,
                                             а просто консультируем больного по телефону. Поэтому
-                                            девизом скорой помощи всегда было и остается: общедоступность и безопасность.
+                                            девизом скорой помощи всегда было и остается: общедоступность и
+                                            безопасность.
                                         </p>
                                         <div class="uni-info-contact">
                                             <ul>
-                                                <li> <i class="fa fa-map-marker" aria-hidden="true"></i>12 микрорайон дом 20/2 помещение 8</li>
-                                                <li><i class="fa fa-phone" aria-hidden="true"></i>0501103000 - 0998103000</li>
-                                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="https://www.instagram.com/dosmed.kg/?igshid=YmMyMTA2M2Y%3D">Instagram</a></li>
+                                                <li><i class="fa fa-map-marker" aria-hidden="true"></i>12 микрорайон дом
+                                                    20/2 помещение 8
+                                                </li>
+                                                <li><i class="fa fa-phone" aria-hidden="true"></i>0501103000 -
+                                                    0998103000
+                                                </li>
+                                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i><a
+                                                        href="https://www.instagram.com/dosmed.kg/?igshid=YmMyMTA2M2Y%3D">Instagram</a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
@@ -194,7 +266,9 @@
                                             <div class="uni-social">
                                                 <h4>Подпишись на нас</h4>
                                                 <ul>
-                                                    <li><a href="https://www.instagram.com/dosmed.kg/?igshid=YmMyMTA2M2Y%3D"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                                    <li>
+                                                        <a href="https://www.instagram.com/dosmed.kg/?igshid=YmMyMTA2M2Y%3D"><i
+                                                                class="fa fa-instagram" aria-hidden="true"></i></a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -212,12 +286,12 @@
                             <div class="col-sm-6">
                                 <p class="copyright-text"><a href="{% url 'index' %}">DOSMED.KG</a></p>
                             </div>
-<!--                            <div class="col-sm-6">-->
-<!--                                <ul class="copyright-menu">-->
-<!--                                    <li><a href="#">On future</a></li>-->
-<!--                                    <li><a href="#">On future</a></li>-->
-<!--                                </ul>-->
-<!--                            </div>-->
+                            <!--                            <div class="col-sm-6">-->
+                            <!--                                <ul class="copyright-menu">-->
+                            <!--                                    <li><a href="#">On future</a></li>-->
+                            <!--                                    <li><a href="#">On future</a></li>-->
+                            <!--                                </ul>-->
+                            <!--                            </div>-->
                         </div>
                     </div>
                 </div>
