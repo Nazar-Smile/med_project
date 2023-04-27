@@ -30,7 +30,7 @@ services:
     env_file:
       - .env
     expose:
-      - 5432
+      - 5433
 
 
 volumes:
