@@ -1,7 +1,7 @@
 version: "3.7"
 
 services:
-  ikigai_app:
+  dosmed:
     container_name: dosmed_app
     restart: always
     build:
