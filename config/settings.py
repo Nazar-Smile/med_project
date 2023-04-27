@@ -20,12 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ep0*twid%72m9ig14uoc#h$2@(x&%v@7ve$=4fb@6z12s2l792'
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY",'django-insecure-ep0*twid%72m9ig14uoc#h$2@(x&%v@7ve$=4fb@6z12s2l792')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DJANGO_DEBUG", default=True)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,24 +80,24 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'docmed_project',
-#         'USER': 'docmed_project_user',
-#         'PASSWORD': 'pulsar',
-#         'HOST': 'localhost',
-#         'PORT': 5432,
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv("POSTGRES_DB", default='docmed_project'),
+        'USER': os.getenv("POSTGRES_USER", default='docmed_project_user'),
+        'PASSWORD': os.getenv("POSTGRES_PASSWORD", default='pulsar'),
+        'HOST': os.getenv("POSTGRES_HOST", default='localhost'),
+        'PORT': os.getenv("POSTGRES_PORT", default=5432),
+    }
+}
 
 
 # Password validation
